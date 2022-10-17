@@ -1,0 +1,1213 @@
+/*обнуление*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*ограничитель*/
+.container{
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+/*заголовки*/
+h1{
+	font-family: Varela Round;
+	font-size: 72px;
+}
+h2{
+	font-family: Varela Round;
+	font-size: 56px;
+}
+h3{
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 36px;
+}
+h4{
+	font-family: Lato;
+	color: #000;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+@font-face{
+	font-family: MyriadPro; 
+	src: url(fonts/MyriadPro-regular.ttf); 
+}
+
+/*nav*/
+header nav{
+	padding: 50px 0;
+}
+/*кнопка (бургер)*/
+header nav .hamb{
+	display: block;
+	padding: 10px;
+	cursor: pointer;
+}
+header nav .hamb .bar{
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: #000;
+	margin: 5px 0;
+	transition: .2s;
+	border-radius: 10px;
+}
+
+/*рабочая среда для бургера*/
+header .popup{
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: -30%;
+	width: 30%;
+	height: 100%;
+	background-color: #22252c;
+	z-index: 1;
+	transition: .3s;
+	overflow: scroll;
+	padding: 75px 20px 50px 50px;
+	box-sizing: border-box;
+}
+header .popup.open{
+	left: 0;
+}
+header .popup .left{
+	width: 80%;
+}
+
+ /*я в ахуе с этого*/
+header .popup .right{ /*я в ахуе с этого*/
+	width: 20%; /*ширина правого поля*/
+	position: relative; /*относительно этого блока позиционирование*/
+}
+header .popup .right .close{
+	position: absolute;/*абсолютное позиционирование*/
+	top: -12.5px;/*выравнивание сверху (половина высоты блока с крестиком)*/
+	left: 0;
+	width: 50px;/*расширение территории*/
+	height: 50px;
+	cursor: pointer;
+}
+header .popup .right .close .line_1,
+header .popup .right .close .line_2{
+	position: absolute;/*абсолютное позиционирование*/
+	top: 50%;/*половина*/
+	left: 50%;/*половина*/
+	width: 25px;/*длина линии крестика*/
+	height: 4px;/*высотка линии крестика*/
+	background-color: #fff;/*цвет*/
+}
+header .popup .right .close .line_1{
+	transform: translate(-50%,-50%) rotate(45deg);/*выравнивание 2 линии по центру*/
+}
+header .popup .right .close .line_2{
+	transform: translate(-50%,-50%) rotate(-45deg);/*выравнивание 2 линии по центру*/
+}
+/*-----------------------------------------------*/
+
+/*меню в бурегере*/
+/*! проблема со скроллом*/
+header .popup .left{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+header .popup .left .logoBurger{
+	margin-bottom: 50px;
+}
+header .popup .left .logoBurger img{
+	width: 60%;
+}
+header .popup .left ul li{
+	list-style-type: none;
+	margin-bottom: 25px;
+}
+header .popup .left ul li a{
+	text-decoration: none;
+	color: #fff;
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 20px;
+}
+header .popup .left .button{
+	display: flex;
+}
+header .popup .left .button a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px 15px;
+	background-color: #267df4;
+	border-radius: 50px;
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 20px;
+}
+header .popup .left .button a img{
+	margin-right: 10px;
+}
+header .popup .left .down .text{
+	margin-bottom: 25px;
+}
+header .popup .left .down .text p{
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 18px;
+	color: #fff;
+}
+header .popup .left .down .text p a{
+	color: #316bfe;
+}
+header .popup .left .down .icons{
+	display: flex;
+	justify-content: space-between;
+}
+header .popup .left .down .icons a img{
+	height: 25px;
+}
+header nav ul{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+header nav ul .left,
+header nav ul .right{
+	display: flex;
+	align-items: center;
+}
+header nav ul li{
+	list-style-type: none;
+	margin-right: 50px;
+}
+header nav .left ul li:last-child,
+header nav .right ul li:last-child{
+	margin-right: 0;
+}
+header nav .middle img{
+	width: 200px;
+}
+header nav ul li a{
+	text-decoration: none;
+	font-family: Lato;
+	font-weight: 500;
+	color: grey;
+	font-size: 18px;
+}
+header nav ul li a:hover{
+	color: black;
+}
+header nav ul .right li:last-child a{
+	color: #fff;
+	padding: 10px 15px;
+	background-color: #267df4;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+}
+header nav ul .right li:last-child img{
+	margin-right: 10px;
+}
+
+/*what_happens*/
+header .what_happens{
+	margin-bottom: 200px;
+}
+header .what_happens .background{
+	background: url(imgs/photo.png) center no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 0;
+	padding: 100px 0 0 0;
+	overflow: hidden;
+}
+header .what_happens .background::before{
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, .4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+header .what_happens h1{
+	text-align: center;
+	margin-bottom: 25px;
+}
+header .what_happens p.text{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 24px;
+	color: grey;
+	text-align: center;
+	margin: 0 auto;
+	width: 50%;
+	margin-bottom: 50px;
+}
+header .what_happens .button{
+	display: flex;
+	justify-content: center;
+}
+header .what_happens .button a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	border: 1px solid grey;
+	border-radius: 50px;
+	padding: 15px 30px;
+	font-size: 18px;
+}
+header .what_happens .button a:hover{
+	border-color: black;
+}
+header .what_happens .button a img{
+	margin-right: 25px;
+}
+header .what_happens .button a p{
+	font-family: Lato;
+	font-weight: 500;
+	color: #000;
+}
+header .what_happens .photo img{
+	display: block;
+	margin: 0 auto;
+	transform: translateY(15%);
+}
+
+/*real-time*/
+main .real-time{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 300px;
+}
+main .real-time .block{
+	width: 45%;
+}
+main .real-time .block img{
+	margin-bottom: 25px;
+}
+main .real-time .block h3{
+	color: grey;
+	margin-bottom: 25px;
+}
+main .real-time .block .text p{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 20px;
+	color: grey;
+	margin-bottom: 25px;
+}
+main .real-time .block .text p:last-child{
+	margin-bottom: 0;
+}
+
+/*your-day*/
+main .your-day{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 200px;
+}
+main .your-day .left,
+main .your-day .right{
+	width: 45%;
+}
+main .your-day .right h2{
+	margin-bottom: 50px;
+}
+main .your-day .right .text{
+	margin-bottom: 50px;
+}
+main .your-day .right .text p{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 20px;
+	color: grey;
+	margin-bottom: 25px;
+}
+main .your-day .right .text p:last-child{
+	margin-bottom: 0;
+}
+main .your-day .right .buttons{
+	display: flex;
+}
+main .your-day .right .buttons a{
+	display: flex;
+	align-items: center;
+	padding: 15px 30px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-family: Lato;
+	font-weight: 500;
+}
+main .your-day .right .buttons a:nth-child(1){
+	background-color: #4d7cf0;
+	margin-right: 25px;
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, .2);
+}
+main .your-day .right .buttons a:nth-child(1) img{
+	margin-left: 50px;
+	transition: .5s;
+
+}
+main .your-day .right .buttons a:nth-child(2){
+	border: 1px solid rgba(0, 0, 0, .2);
+	color: #000;
+}
+main .your-day .right .buttons a:nth-child(2) img{
+	transition: .5s;
+}
+main .your-day .left{
+	position: relative;
+	left: -20%;
+	z-index: -1;
+} 
+
+/*we_are_almost*/
+main .we_are_almost{
+	position: relative;
+	padding-bottom: 300px;
+	overflow: hidden;
+}
+main .we_are_almost h2{
+	margin-bottom: 50px;
+}
+main .we_are_almost .text p.up{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 20px;
+	color: grey;
+	margin-bottom: 25px;
+}
+main .we_are_almost .text p.up:nth-child(2){
+	margin-bottom: 50px;
+}
+main .we_are_almost .text p.down{
+	font-family: Lato;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+main .we_are_almost .imgs img{
+	margin-right: 25px;
+}
+main .we_are_almost .left{
+	width: 40%;
+}
+main .we_are_almost .right{
+	position: absolute;
+	top: 0;
+	right: -5%;
+}
+main .we_are_almost .right .dot{
+	width: 7px;
+	height: 7px;
+	background-color: #4d7cf0;
+	border-radius: 100%;
+	position: absolute;
+}
+main .we_are_almost .right .dot{
+	/*box-shadow: 0 0 10px #4d7cf0;*/
+	animation: shadow infinite ease;
+}
+main .we_are_almost .right .dot:nth-child(2){
+	top: 98px;
+	left: 149px;
+	animation-duration: 1s;
+}
+main .we_are_almost .right .dot:nth-child(2):before,
+main .we_are_almost .right .dot:nth-child(6):before,
+main .we_are_almost .right .dot:nth-child(8):before,
+main .we_are_almost .right .dot:nth-child(15):before,
+main .we_are_almost .right .dot:nth-child(19):before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: rgba(0, 0, 0, 0);
+	border: 1px solid #4d7cf0;
+	border-radius: 100%;
+	animation: border infinite ease;
+}
+main .we_are_almost .right .dot:nth-child(2):before{
+	animation-duration: 2s;
+}
+main .we_are_almost .right .dot:nth-child(6):before{
+	animation-duration: 3s;
+	animation-delay: 1s;
+}
+main .we_are_almost .right .dot:nth-child(8):before{
+	animation-duration: 5s;
+	animation-delay: 3s;
+}
+main .we_are_almost .right .dot:nth-child(15):before{
+	animation-duration: 4s;
+	animation-delay: 5s;
+}
+main .we_are_almost .right .dot:nth-child(19):before{
+	animation-duration: 2s;
+	animation-delay: 8s;
+}
+main .we_are_almost .right .dot:nth-child(3){
+	top: 148px;
+	left: 207px;
+	animation-duration: 2s;
+}
+main .we_are_almost .right .dot:nth-child(4){
+	top: 165px;
+	left: 165px;
+	animation-duration: 3s;
+}
+main .we_are_almost .right .dot:nth-child(5){
+	top: 199px;
+	left: 132px;
+	animation-duration: 1s;
+}
+main .we_are_almost .right .dot:nth-child(6){
+	top: 207px;
+	left: 240px;
+}
+main .we_are_almost .right .dot:nth-child(7){
+	top: 182px;
+	left: 273px;
+	animation-duration: 3s;
+}
+main .we_are_almost .right .dot:nth-child(8){
+	top: 290px;
+	left: 273px;
+}
+main .we_are_almost .right .dot:nth-child(9){
+	top: 323px;
+	left: 323px;
+	animation-duration: 2s;
+}
+main .we_are_almost .right .dot:nth-child(10){
+	top: 340px;
+	left: 506px;
+	animation-duration: 4s;
+}
+main .we_are_almost .right .dot:nth-child(11){
+	top: 249px;
+	left: 498px;
+	animation-duration: 4s;
+}
+main .we_are_almost .right .dot:nth-child(12){
+	top: 265px;
+	left: 465px;
+	animation-duration: 1s;
+}
+main .we_are_almost .right .dot:nth-child(13){
+	top: 190px;
+	left: 498px;
+	animation-duration: 4s;
+}
+main .we_are_almost .right .dot:nth-child(14){
+	top: 166px;
+	left: 481px;
+	animation-duration: 2s;
+}
+main .we_are_almost .right .dot:nth-child(15){
+	top: 182px;
+	left: 523px;
+	animation-duration: 4s;
+}
+main .we_are_almost .right .dot:nth-child(16){
+	top: 157px;
+	left: 515px;
+	animation-duration: 3s;
+}
+main .we_are_almost .right .dot:nth-child(17){
+	top: 141px;
+	left: 505px;
+	animation-duration: 4s;
+}
+main .we_are_almost .right .dot:nth-child(18){
+	top: 123px;
+	left: 581px;
+	animation-duration: 3s;
+}
+main .we_are_almost .right .dot:nth-child(19){
+	top: 232px;
+	left: 606px;
+	animation-duration: 2s;
+}
+@keyframes shadow{
+	0%{
+		box-shadow: 0 0 1px #4d7cf0;
+	}
+	50%{
+		box-shadow: 0 0 15px #4d7cf0;
+	}
+	100%{
+		box-shadow: 0 0 1px #4d7cf0;
+	}
+}
+@keyframes border{
+	0%{
+		width: 0;
+		height: 0;	
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		width: 50px;
+		height: 50px;
+		opacity: 0;
+	}
+}
+main .we_are_almost a{
+	text-decoration: none;
+}
+
+/*beutiful_interface*/
+main .beutiful_interface{
+	background-color: rgba(0, 0, 0, .05);
+	padding: 150px 0;
+	overflow: hidden;
+	margin-bottom: 200px;
+}
+main .beutiful_interface h2{
+	text-align: center;
+	margin-bottom: 50px;
+}
+main .beutiful_interface hr{
+	width: 3%;
+	height: 2px;
+	background-color: #4d7cf0;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+main .beutiful_interface p.up,
+main .beutiful_interface p.middle{
+	font-family: Lato;
+	font-weight: 700; /*чезахня*/
+	color: grey;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 50px;
+}
+main .beutiful_interface .blocks{
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin-bottom: 100px;
+}
+main .beutiful_interface .blocks img:nth-child(1){
+	height: 100%;
+}
+main .beutiful_interface .blocks img:nth-child(2),
+main .beutiful_interface .blocks img:nth-child(3),
+main .beutiful_interface .blocks img:nth-child(4),
+main .beutiful_interface .blocks img:nth-child(5),
+main .beutiful_interface .blocks img:nth-child(6){
+	height: 75%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+main .beutiful_interface .blocks img:nth-child(2){
+	left: 0%;
+	transition: .5s;
+}
+main .beutiful_interface .blocks img:nth-child(3){
+	left: 25%;
+	transition: .5s;
+
+}
+main .beutiful_interface .blocks img:nth-child(4){
+	left: 50%;
+	transition: .5s;
+
+}
+main .beutiful_interface .blocks img:nth-child(5){
+	left: 75%;
+	transition: .5s;
+
+}
+main .beutiful_interface .blocks img:nth-child(6){
+	left: 100%;
+	transition: .5s;
+}
+main .beutiful_interface form{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 75px;
+}
+main .beutiful_interface form .block{
+	display: flex;
+	position: relative;
+}
+main .beutiful_interface form input{
+	font-family: Lato;
+	font-weight: 500;
+	padding: 20px 30px;
+	width: 600px; /*фиксированная виличина первый раз*/
+	font-size: 24px;
+	border: 1px solid grey;
+	border-radius: 50px;
+	background-color: rgba(0, 0, 0, 0);
+	outline: none;
+}
+main .beutiful_interface form button{
+	position: absolute;
+	top: 50%;
+	right: 1%;
+	transform: translateY(-50%);
+	border: 0;
+	border-radius: 50px;
+	background-color: #8ec65d;
+	padding: 16px 35px;
+	display: flex;	
+	align-items: center;
+	cursor: pointer;
+}
+main .beutiful_interface form button p{
+	font-family: Lato;
+	font-weight: 500;
+	color: #fff;
+	font-size: 24px;
+	margin-right: 25px;
+}
+main .beutiful_interface form button img{
+	width: 20px;
+}
+main .beutiful_interface p.down{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 14px;
+	color: grey;
+	opacity: 50%;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+main .beutiful_interface .button{
+	display: flex;
+	justify-content: center;
+}
+main .beutiful_interface .button a{
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	background-color: #000;
+	padding: 15px 40px;
+	border-radius: 50px;
+}
+main .beutiful_interface .button a img{
+	width: 30px;
+	margin-right: 15px;
+}
+main .beutiful_interface .button a .text p.top,
+main .beutiful_interface .button a .text p.bottom{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 14px;
+	color: #fff;
+}
+main .beutiful_interface .button a .text p.bottom{
+	font-size: 28px;
+}
+
+/*actors*/
+main .actors{
+	overflow: hidden;
+	margin-bottom: 200px;
+}
+main .actors .up{
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+	margin: 0 auto 100px auto;
+}
+main .actors .blocks{
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+main .actors .blocks .photo_1 img,
+main .actors .blocks .photo_2 img,
+main .actors .blocks .photo_3 img{
+	opacity: 50%;
+	transform: scale(.8);
+	border-radius: 50%;
+	transition: .5s;
+	cursor: pointer;
+}
+main .actors .blocks .photo_2 img{
+	opacity: 100%;
+	transform: scale(1);
+}
+main .actors .arrowL img,
+main .actors .arrowR img{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	padding: 25px;
+}
+main .actors .arrowR img{
+	transform: translateY(-50%) rotate(180deg);
+}
+main .actors .down{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 0;
+}
+main .actors .down::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to left, white 30%, rgba(0, 0, 0, 0) 30% 70%, white 70%);
+	z-index: 1;
+}
+main .actors .down .info{
+	text-align: center;
+	width: 30%;
+	position: relative;
+	left: 0;
+	transform: translateX(0);
+	transition: .5s;
+}
+main .actors .down .info p.title{
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 36px;
+	margin-bottom: 75px;
+}
+main .actors .down .info p.text_up{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 20px;
+	color: grey;	
+	margin-bottom: 50px;
+}
+main .actors .down .info .stars{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 100px;
+}
+main .actors .down .info .stars img{
+	margin-right: 10px;
+}
+main .actors .down .info .stars img:last-child{
+	margin-right: 0;
+}
+main .actors .down .info p.text_down{
+	font-family: Lato;
+	font-weight: 700;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+/*choose_your*/
+main .choose_your{
+	background-color: rgba(0, 0, 0, .05);
+	margin-bottom: 150px;
+}
+main .choose_your .container{
+	padding: 200px 0;
+	display: flex;
+	justify-content: space-between;
+}
+main .choose_your .container .left{
+	width: 35%;
+}
+main .choose_your .container .right{
+	width: 50%;
+}
+main .choose_your .left h2{
+	margin-bottom: 100px;
+}
+main .choose_your .left p.up{
+	font-family: Lato;
+	font-family: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-bottom: 50px;
+}
+main .choose_your .left .buttons{
+	padding: 2px 0 2px 2px;
+	border: 2px solid grey;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50%;
+	font-family: MyriadPro;
+	margin-bottom: 100px;
+	position: relative;
+}
+main .choose_your .left .buttons .leftB,
+main .choose_your .left .buttons .rightB{
+	/*background-color: #fff;
+	border-radius: 50px;
+	padding: 15px 30px;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);*/
+	padding: 15px 30px;
+	cursor: pointer;
+	z-index: 1;
+	/*дописать скрипт*/
+}
+main .choose_your .left .buttons .choose{
+	position: absolute;
+	top: 50%;
+	left: 1%;
+	z-index: 0;
+	transform: translateY(-50%);
+	width: 45%;
+	height: 90%;
+	border-radius: 50px;
+	background-color: white;
+	box-shadow: 5px 5px 25px rgba(0, 0, 0, .25);
+	transition: .5s;
+}
+main .choose_your .left p.middle{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 20px;
+	color: grey;	
+	margin-bottom: 50px;
+}
+main .choose_your .left p.down{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 14px;
+	color: grey;	
+	margin-bottom: 50px;
+}
+main .choose_your .right{
+	/*правое пространоство*/
+}
+main .choose_your .right .individual,
+main .choose_your .right .company{
+	height: 100%;
+}
+main .choose_your .right .individual{
+	display: flex;
+	animation-duration: .5s;
+}
+main .choose_your .right .company{
+	display: none;
+	animation-duration: .5s;
+}
+@keyframes on{
+	0%{
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	100%{
+		opacity: 100%;
+		transform: scale(1);
+	}
+}
+@keyframes off{
+	0%{
+		opacity: 100%;
+		transform: scale(1);
+	}
+	100%{
+		opacity: 0;
+		transform: scale(0.8);
+	}
+}
+main .choose_your .right .individual .block,
+main .choose_your .right .company .block{
+	width: 50%;
+	background-color: rgba(0, 0, 0, .05);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 10px;
+	padding: 75px 0;
+	box-sizing: border-box;
+}
+main .choose_your .right .individual .block:first-child{
+	transform: scale(1.1);
+	background-color: white;
+}
+main .choose_your .right .individual .block:first-child .button{
+	background-color: #4d7cf0;
+	color: #fff;
+}
+main .choose_your .right .company .block:last-child{
+	transform: scale(1.1);
+	background-color: white;
+}
+main .choose_your .right .company .block:last-child .button{
+	background-color: #4d7cf0;
+	color: #fff;
+}
+main .choose_your .right .block .up{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+main .choose_your .right .block p.title{
+	font-family: Lato;
+	font-weight: 300;
+	font-size: 36px;
+	margin-bottom: 25px;
+}
+main .choose_your .right .block p.price{
+	text-transform: uppercase;
+	font-family: Lato;
+	font-weight: 700;
+	padding: 5px 10px;
+	font-size: 14px;
+	border: 1px solid rgba(0, 0, 0, .05);
+	border-radius: 50px;
+	margin-bottom: 75px;
+}
+main .choose_your .right .block p.text{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 18px;
+	color: grey;	
+	margin-bottom: 50px;
+}
+main .choose_your .right .block ul{
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+main .choose_your .right .block ul li{
+	position: relative;
+	list-style-image: url(imgs/OnIcon.png);
+	margin-bottom: 25px;
+	font-family: Lato;
+	font-weight: 500;
+}
+main .choose_your .right .block ul li:last-child{
+	margin-bottom: 0;
+}
+main .choose_your .right .block .down a{
+	text-decoration: none;
+}
+main .choose_your .right .block .down a .button{
+	padding: 10px 70px;
+	border: 1px solid #4d7cf0;
+	border-radius: 50px;
+	font-family: MyriadPro;
+	color: #4d7cf0;
+	position: relative;
+	bottom: 0;
+	left: 0;
+}
+
+/*subscribe_our*/
+main .subscribe_our{
+	margin-bottom: 250px;
+}
+main .subscribe_our h2{
+	text-align: center;
+	margin-bottom: 50px;
+}
+main .subscribe_our form{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 25px;
+}
+main .subscribe_our form .block{
+	display: flex;
+	position: relative;
+}
+main .subscribe_our form input{
+	font-family: Lato;
+	font-weight: 500;
+	padding: 20px 20px;
+	width: 800px; /*фиксированная виличина первый раз*/
+	font-size: 24px;
+	border: 1px solid grey;
+	border-radius: 50px;
+	background-color: rgba(0, 0, 0, 0);
+	outline: none;
+
+}
+main .subscribe_our form button{
+	position: absolute;
+	top: 50%;
+	right: 1%;
+	transform: translateY(-50%);
+	border: 0;
+	border-radius: 50px;
+	background-color: #8ec65d;
+	padding: 16px 35px;
+	display: flex;	
+	align-items: center;
+	cursor: pointer;
+}
+main .subscribe_our form button p{
+	font-family: Lato;
+	font-weight: 500;
+	color: #fff;
+	font-size: 24px;
+}
+main .subscribe_our p{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 18px;
+	color: grey;
+	text-align: center;
+}
+
+/*footer*/
+footer{
+
+}
+footer .up{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 250px;
+}
+footer .up .left{
+	width: 25%;
+}
+footer .up .right{
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+footer .up .right .block{
+	display: flex;
+	flex-direction: column;
+}
+footer .up .right h4{
+	margin-bottom: 25px;
+}
+footer .up .right .block a{
+	text-decoration: none;
+	font-family: Lato;
+	font-size: 18px;
+	color: grey;
+	margin-bottom: 25px;
+}
+footer .up .left .logo{
+	margin-bottom: 25px;
+}
+footer .up .left p.text{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 18px;
+	color: grey;
+	line-height: 1.5;
+	margin-bottom: 25px;
+}
+footer .up .left .button{
+	display: flex;
+	margin-bottom: 25px;
+}
+footer .up .left .button a{
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	background-color: #000;
+	padding: 10px 20px;
+	border-radius: 15px;
+}
+footer .up .left .button a img{
+	width: 30px;
+	margin-right: 15px;
+}
+footer .up .left .button a .text p.top,
+footer .up .left .button a .text p.bottom{
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 14px;
+	color: #fff;
+}
+footer .up .left .button a .text p.bottom{
+	font-size: 28px;
+}
+footer .up .left .icons a{
+	/*display: flex;*/
+	margin-right: 25px;
+	text-decoration: none;
+} 
+footer .down{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+} 
+footer .down .left{
+	font-family: Lato;
+	font-weight: 500;
+	color: grey;
+	font-size: 14px;
+}
+footer .down .right{
+	display: flex;
+	align-items: center;
+}
+footer .down .right p{
+	font-family: Lato;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
